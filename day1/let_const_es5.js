@@ -3,7 +3,7 @@
   var x = 1
   console.log('line3_x: ' + x) // 打印 1
 })()
-console.log('line6_x: ' + x) // x 虽然被提升了，但是仍旧是undefined，报错
+// console.log('line6_x: ' + x) // x 虽然被提升了，但是仍旧是undefined，报错
 // const based on ES5
 var __const = function (data, value) {
   // 先定义全局变量
@@ -38,3 +38,15 @@ for (let item in window) {  // enumerable: false 不可枚举
     console.log('line38_a: ' + awindow[item]) // 没有打印
   }
 }
+
+function showConst1() {
+  __const('c', 1)
+  console.log('line44_c: ', c)
+  const d = 1
+}
+function showConst2() {
+  const d = 1
+}
+const e = 1
+showConst1()
+showConst2()
