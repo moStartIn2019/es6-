@@ -163,7 +163,7 @@ function parse(tokens) {
 
   // 位置暂存栈，用于支持很多时候需要返回到某个之前的位置
   const stashStack = [];
-  function stash(cb) {
+  function stash() {
     // 暂存当前位置
     stashStack.push(i);
   }
